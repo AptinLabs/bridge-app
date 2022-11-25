@@ -60,13 +60,8 @@ export type Cluster = "devnet" | "testnet" | "mainnet";
 //     : process.env.REACT_APP_CLUSTER === "testnet"
 //     ? "testnet"
 //     : "devnet";
-export const CLUSTER: Cluster ="testnet" as Cluster;
-// export const CLUSTER: Cluster =
-//   process.env.REACT_APP_CLUSTER === "mainnet"
-//     ? "devnet"
-//     : process.env.REACT_APP_CLUSTER === "testnet"
-//     ? "testnet"
-//     : "mainnet";
+export const CLUSTER: Cluster ="mainnet" as Cluster;
+ 
 
 export interface ChainInfo {
   id: ChainId;
