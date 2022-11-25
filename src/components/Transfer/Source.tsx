@@ -177,7 +177,7 @@ function Source() {
       >
         <div className={classes.chainSelectContainer}>
           <Typography variant="caption">Source</Typography>
-          <ChainSelect
+          <ChainSelect 
             select
             variant="outlined"
             fullWidth

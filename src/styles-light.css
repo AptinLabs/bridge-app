@@ -1,5 +1,5 @@
 @media only screen and (min-width: 961px) {
-    .left-wrap {
+    .light .left-wrap {
         position: fixed;
         top: 0px;
         left: 0px;
@@ -9,7 +9,7 @@
         background: linear-gradient(#eaeff4, #dfedf4);
     }
 
-    .right-wrap {
+    .light .right-wrap {
         position: absolute;
         top: 0px;
         right: 0px;
@@ -18,7 +18,7 @@
     }
 
 
-    .left-wrap .aptin-logo {
+    .light .left-wrap .aptin-logo {
         height: 80px;
         padding: 0px 24px;
         border-bottom: 1px solid #e8e0e0;
@@ -27,21 +27,21 @@
         justify-content: flex-start;
     }
 
-    .left-wrap.dark .aptin-logo {
+    /* .light .left-wrap.dark .aptin-logo {
         border-bottom: 1px solid #2f3337;
-    }
+    } */
 
-    .left-wrap .aptin-logo img {
+    .light .left-wrap .aptin-logo img {
         width: 128px;
         max-height: 60px;
         /* transition:width 0.2s;  */
     }
 
-    .left-menu-box {
+    .light .left-menu-box {
         position: relative;
     }
 
-    .left-menu-box .menu-btn-hide {
+    .light .left-menu-box .menu-btn-hide {
         position: absolute;
         right: -20px;
         top: 22px;
@@ -51,17 +51,17 @@
         /* animation-delay: 0.5s; */
     }
 
-    .left-menu-box .menu-btn-hide span {
+    .light .left-menu-box .menu-btn-hide span {
         display: none;
     }
 
-    .left-wrap .muiList-root {
+    .light .left-wrap .muiList-root {
         float: none;
         padding: 0px;
         margin-top: 30px;
     }
 
-    .left-wrap .muiList-root li {
+    .light .left-wrap .muiList-root li {
         list-style: none;
         height: 42px;
         line-height: 42px;
@@ -70,15 +70,15 @@
 
     }
 
-    .left-wrap .muiList-root li.menu-item {
+    .light .left-wrap .muiList-root li.menu-item {
         border-radius: 50px;
     }
 
-    /* .left-wrap .muiList-root li.menu-item:hover {
+    /* .light .left-wrap .muiList-root li.menu-item:hover {
         background-color: #d1d1d1; 
     } */
-    .left-wrap .muiList-root li.menu-item:active,
-    .left-wrap .muiList-root li.on {
+    .light .left-wrap .muiList-root li.menu-item:active,
+    .light .left-wrap .muiList-root li.on {
         /* background-color: #181C21; */
         /* background:
             radial-gradient(ellipse at 20% 50%, #2d543f, #181C21, transparent),
@@ -86,13 +86,13 @@
         background: linear-gradient(250deg, #103d54 1%, #181C21 50%, #294a38 99%)
     }
 
-    .left-wrap.dark .muiList-root li.menu-item:active,
-    .left-wrap.dark .muiList-root li.on {
+    /* .light .left-wrap.dark .muiList-root li.menu-item:active,
+    .light .left-wrap.dark .muiList-root li.on {
         background: #FFFFFF;
-    }
+    } */
 
-    .left-wrap .muiList-root li a,
-    .left-wrap .muiList-root li button {
+    .light .left-wrap .muiList-root li a,
+    .light .left-wrap .muiList-root li button {
         font-size: 0.94rem;
         transition: none;
         letter-spacing: 0.009375rem;
@@ -102,36 +102,36 @@
         padding: 6px 12px;
     }
 
-    .left-wrap .muiList-root li.menu-item:active a,
-    .left-wrap .muiList-root li.menu-item.on a,
-    .left-wrap .muiList-root li.menu-item:active button,
-    .left-wrap .muiList-root li.menu-item.on button {
+    .light .left-wrap .muiList-root li.menu-item:active a,
+    .light .left-wrap .muiList-root li.menu-item.on a,
+    .light .left-wrap .muiList-root li.menu-item:active button,
+    .light .left-wrap .muiList-root li.menu-item.on button {
         color: #FFFFFF;
     }
 
-    .left-wrap.dark .muiList-root li.menu-item:active a,
-    .left-wrap.dark .muiList-root li.menu-item.on a,
-    .left-wrap.dark .muiList-root li.menu-item:active button,
-    .left-wrap.dark .muiList-root li.menu-item.on button {
+    /* .light .left-wrap.dark .muiList-root li.menu-item:active a,
+    .light .left-wrap.dark .muiList-root li.menu-item.on a,
+    .light .left-wrap.dark .muiList-root li.menu-item:active button,
+    .light .left-wrap.dark .muiList-root li.menu-item.on button {
         color: #181c21;
-    }
+    } */
 
-    .left-wrap .muiList-root li a:hover,
-    .left-wrap .muiList-root li a:active,
-    .left-wrap .muiList-root li a::before,
-    .left-wrap .muiList-root li button:hover,
-    .left-wrap .muiList-root li button:active,
-    .left-wrap .muiList-root li button::before {
+    .light .left-wrap .muiList-root li a:hover,
+    .light .left-wrap .muiList-root li a:active,
+    .light .left-wrap .muiList-root li a::before,
+    .light .left-wrap .muiList-root li button:hover,
+    .light .left-wrap .muiList-root li button:active,
+    .light .left-wrap .muiList-root li button::before {
         background: transparent;
     }
 
-    .left-wrap .muiList-root li a .MuiTouchRipple-root,
-    .left-wrap .muiList-root li button .MuiTouchRipple-root {
+    .light .left-wrap .muiList-root li a .MuiTouchRipple-root,
+    .light .left-wrap .muiList-root li button .MuiTouchRipple-root {
         display: none;
     }
 
 
-    .left-wrap .muiList-root li .ico-svg {
+    .light .left-wrap .muiList-root li .ico-svg {
         height: 24px;
         width: 24px;
         background-color: #FFFFFF;
@@ -142,40 +142,40 @@
         border-radius: 12px;
     }
 
-    .left-wrap .muiList-root li.on .ico-svg svg path {
+    .light .left-wrap .muiList-root li.on .ico-svg svg path {
         fill: #181c21;
         ;
     }
 
-    .left-wrap.dark .muiList-root li .ico-svg {
+    /* .light .left-wrap.dark .muiList-root li .ico-svg {
         background-color: #2f3337;
     }
 
-    .left-wrap.dark .muiList-root li.on .ico-svg {
+    .light .left-wrap.dark .muiList-root li.on .ico-svg {
         background-color: #181c21;
         ;
-    }
+    } */
 
-    .left-wrap.dark .muiList-root li.on .ico-svg svg path {
+    /* .light .left-wrap.dark .muiList-root li.on .ico-svg svg path {
         fill: #FFFFFF;
-    }
+    } */
 
 
-    .left-wrap.hide .muiList-root li .nav-i {
+    .light .left-wrap.hide .muiList-root li .nav-i {
         display: none;
     }
 
-    .left-wrap.hide .muiList-root li {
+    .light .left-wrap.hide .muiList-root li {
         margin: 0px 0px;
     }
 
-    .left-wrap.hide .muiList-root li svg {
+    .light .left-wrap.hide .muiList-root li svg {
         margin: 0px 0px 0px 0px;
         width: 24px;
         height: 24px;
     }
 
-    .left-wrap .aptin-footer-box-left {
+    .light .left-wrap .aptin-footer-box-left {
         position: absolute;
         left: 0px;
         bottom: 0px;
@@ -187,25 +187,25 @@
         justify-content: center
     }
 
-    .left-wrap.dark .aptin-footer-box-left {
+    /* .light .left-wrap.dark .aptin-footer-box-left {
         border-top: 1px solid #2f3337;
-    }
+    } */
 
-    .left-wrap .aptin-footer-box-left .MuiTypography-root {
+    .light .left-wrap .aptin-footer-box-left .MuiTypography-root {
         padding: 0px;
         margin: 0px 5px;
     }
 
-    .left-wrap .aptin-footer-box-left a:hover {
+    .light .left-wrap .aptin-footer-box-left a:hover {
         background: none;
         background-color: transparent;
     }
 
-    .left-wrap .aptin-footer-box-left .MuiTypography-root .MuiTouchRipple-root {
+    .light .left-wrap .aptin-footer-box-left .MuiTypography-root .MuiTouchRipple-root {
         display: none;
     }
 
-    .atpin-menu-dailog .MuiMenu-paper {
+    .light .atpin-menu-dailog .MuiMenu-paper {
         min-width: 240px;
         margin-top: 40px;
         border-radius: 24px;
@@ -213,27 +213,27 @@
         background: #ffffff;
     }
 
-    .atpin-menu-dailog.dark .MuiMenu-paper {
+    /* .light .atpin-menu-dailog.dark .MuiMenu-paper {
         background-color: #2f3337;
-    }
+    } */
 
-    .atpin-menu-dailog .MuiListItem-button {}
+    .light .atpin-menu-dailog .MuiListItem-button {}
 
-    .atpin-menu-dailog .MuiListItem-button .MuiListItemIcon-root {
+    .light .atpin-menu-dailog .MuiListItem-button .MuiListItemIcon-root {
         min-width: 30px;
         padding-right: 4px;
     }
 
-    .more-menu .MuiMenu-paper {
+    .light .more-menu .MuiMenu-paper {
         border-radius: 30px;
     }
 
 
-    .right-wrap .mobile-logo {
+    .light .right-wrap .mobile-logo {
         display: none;
     }
 
-    .right-wrap .header-apt {
+    .light .right-wrap .header-apt {
         position: relative;
         margin-top: 0px;
         height: 80px;
@@ -243,21 +243,21 @@
         align-items: center;
     }
 
-    .right-wrap.dark .header-apt {
+    /* .light .right-wrap.dark .header-apt {
         border-bottom: 1px solid #2f3337;
-    }
+    } */
 
-    .right-wrap .header-apt .data-wrap {
+    .light .right-wrap .header-apt .data-wrap {
         flex-direction: row;
     }
 
-    .right-wrap .header-apt .wormhole-info {
+    .light .right-wrap .header-apt .wormhole-info {
         display: flex;
         align-items: center;
         justify-content: flex-end;
     }
 
-    .power-by {
+    .light .power-by {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -265,19 +265,19 @@
         font-size: 1.52rem;
     }
 
-    .power-by img {
+    .light .power-by img {
         height: 42px;
     }
 
 
-    .come-soon {
+    .light .come-soon {
         margin-top: 30vh;
         text-align: center;
         font-size: 30px;
         color: #292E41;
     }
 
-    .aptin-area .centered-container {
+    .light .aptin-area .centered-container {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -285,30 +285,39 @@
         height: 140px;
     }
 
-    .aptin-area .centered-container h1,
-    .aptin-area .centered-container h2 {
-        font-size: 1.52rem; 
-        font-weight: normal; 
+    .light .aptin-area .centered-container h1,
+    .light .aptin-area .centered-container h2 {
+        font-size: 1.52rem;
+        font-weight: normal;
         letter-spacing: 1px;
         line-height: 1.43;
     }
 
-    .MuiDialog-paperWidthSm{
+    .light .MuiDialog-paperWidthSm {
         min-width: 390px;
+    }
+
+    .light .aptin-area .MuiAlert-root,
+    .light .aptin-dialog .MuiAlert-root {
+        border-radius: 50px;
+    }
+
+    .light .MuiAlert-outlinedInfo {
+        border-radius: 100px !important;
     }
 
 }
 
 @media only screen and (max-width: 960px) {
-    .left-wrap {
+    .light .left-wrap {
         display: none;
     }
 
-    .right-wrap {
+    .light .right-wrap {
         width: 100% !important;
     }
 
-    .right-wrap .header-apt {
+    .light .right-wrap .header-apt {
         position: relative;
         padding: 0;
         height: 48px;
@@ -316,46 +325,48 @@
         align-items: center;
     }
 
-    .right-wrap .mobile-logo {
+    .light .right-wrap .mobile-logo {
         margin-left: 10px;
     }
 
-    .right-wrap .header-apt.mobile-open {
+    .light .right-wrap .header-apt.mobile-open {
         background-color: rgb(24, 28, 33, 0.8);
     }
 
-    .right-wrap .header-apt.mobile-open .MuiIconButton-label .MuiSvgIcon-root {
+    .light .right-wrap .header-apt.mobile-open .MuiIconButton-label .MuiSvgIcon-root {
         color: #ffffff;
         padding: 2px;
     }
 
-    .right-wrap .header-apt .data-wrap {
+    .light .right-wrap .header-apt .data-wrap {
         display: flex;
         flex-direction: row;
         align-items: center;
         padding: 0px 4px;
     }
 
-    .right-wrap .mobilemenu .menu-btn {
-        padding: 3px 4px;
-        min-width: 30px;
+    .light .right-wrap .mobilemenu .menu-btn {
+        background: none;
+        border-radius: 0px;
+        border: 0px;
+        margin-top: -4px;
     }
 
-    .right-wrap .mobilemenu .menu-btn:hover {
+    .light .right-wrap .mobilemenu .menu-btn:hover {
         background: none;
         background-color: transparent;
     }
 
-    .right-wrap .mobilemenu .menu-btn .MuiTouchRipple-root {
+    .light .right-wrap .mobilemenu .menu-btn .MuiTouchRipple-root {
         display: none;
     }
 
-    .right-wrap.dark .mobilemenu .menu-btn {
+    /* .light .right-wrap.dark .mobilemenu .menu-btn {
         border: 1px solid #2f3337;
         background: #303338;
-    }
+    } */
 
-    .bridge-drawer {
+    .light .bridge-drawer {
         margin-top: 40px;
         max-height: 100%;
         background: #2f3337;
@@ -366,12 +377,12 @@
         width: 100%;
     }
 
-    .bridge-drawer .MuiDrawer-paperAnchorTop {
+    .light .bridge-drawer .MuiDrawer-paperAnchorTop {
         top: 48px;
         background: #2f3337;
     }
 
-    .bridge-drawer .MuiTypography-body1 {
+    .light .bridge-drawer .MuiTypography-body1 {
         margin: 0;
         font-weight: 500;
         letter-spacing: 0.00625rem;
@@ -384,7 +395,7 @@
         padding-bottom: 8px;
     }
 
-    .bridge-drawer .navigation-list {
+    .light .bridge-drawer .navigation-list {
         list-style: none;
         margin: 0;
         padding: 0;
@@ -394,7 +405,7 @@
         align-items: flex-start;
     }
 
-    .bridge-drawer .navigation-list li.mobile-nav-li {
+    .light .bridge-drawer .navigation-list li.mobile-nav-li {
         width: 100%;
         margin-right: 0px;
         display: flex;
@@ -406,7 +417,7 @@
         padding: 0px;
     }
 
-    .bridge-drawer .navigation-list li.mobile-nav-li .MuiTypography-body1 {
+    .light .bridge-drawer .navigation-list li.mobile-nav-li .MuiTypography-body1 {
         padding: 8px 16px;
         font-size: 0.875rem;
         text-decoration: none;
@@ -418,18 +429,18 @@
         width: 100%;
     }
 
-    .bridge-drawer .navigation-list li.mobile-nav-li .MuiListItemIcon-root {
+    .light .bridge-drawer .navigation-list li.mobile-nav-li .MuiListItemIcon-root {
         min-width: 30px;
         padding-right: 4px;
     }
 
-    .mobile-nav-li a,
-    .mobile-nav-li h2 {
+    .light .mobile-nav-li a,
+    .light .mobile-nav-li h2 {
         padding: 8px 16px;
         font-size: 1.1rem;
     }
 
-    .power-by {
+    .light .power-by {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -437,11 +448,11 @@
         font-size: 1.2rem;
     }
 
-    .power-by img {
+    .light .power-by img {
         height: 26px;
     }
 
-    .aptin-area .centered-container {
+    .light .aptin-area .centered-container {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -449,143 +460,157 @@
         height: 100px;
     }
 
-    .aptin-area .centered-container h1,
-    .aptin-area .centered-container h2 {
-        font-size: 1.52rem; 
-        font-weight: normal; 
+    .light .aptin-area .centered-container h1,
+    .light .aptin-area .centered-container h2 {
+        font-size: 1.52rem;
+        font-weight: normal;
         letter-spacing: 1px;
         line-height: 1.43;
     }
 
+    .light .MuiStep-root {
+        padding: 24px 24px 10px;
+        border-radius: 16px;
+    }
+
+    .light .aptin-area .MuiAlert-root,
+    .light .aptin-dialog .MuiAlert-root {
+        border-radius: 16px;
+    }
+
+    .light  .MuiTab-root.MuiTab-fullWidth{padding: 0px;}
+
 }
 
 
+.light .mode-type {
+    cursor: pointer;
+    padding: 5px;
+}
 
-
-
-.aptin-area .MuiTypography-colorTextSecondary {
+.light .aptin-area .MuiTypography-colorTextSecondary {
     color: rgb(156, 160, 168);
 }
 
-.MuiTabs-root.aptin-menu {
+.light .MuiTabs-root.aptin-menu {
     border-bottom: 0;
 }
 
-.aptin-menu .MuiTabs-indicator {
+.light .aptin-menu .MuiTabs-indicator {
     /* border-radius: 50px;
     background-color:#181c21;  */
     display: none;
 }
 
-.aptin-menu .MuiTab-fullWidth {
+.light .aptin-menu .MuiTab-fullWidth {
     border-radius: 50px;
     background-color: #ffffff;
 }
 
-.aptin-menu .MuiTabs-flexContainer {
+.light .aptin-menu .MuiTabs-flexContainer {
     gap: 12px;
 }
 
-.aptin-menu .MuiTab-textColorInherit.Mui-selected {
+.light .aptin-menu .MuiTab-textColorInherit.Mui-selected {
     color: #ffffff;
     border-radius: 50px;
     background-color: #181c21;
 }
 
-.aptin-area {}
+.light .aptin-area {}
 
-.aptin-area .verifier {
+.light .aptin-area .verifier {
     border: 1px solid #d9dbe2;
 }
 
-.aptin-area .MuiOutlinedInput-root {
+.light .aptin-area .MuiOutlinedInput-root {
     border-radius: 50px;
     border: 0px;
 }
 
-.aptin-area .MuiSelect-icon {
+.light .aptin-area .MuiSelect-icon {
     color: #181c21;
 }
 
-.aptin-area .MuiIconButton-root {
+.light .aptin-area .MuiIconButton-root {
     color: #181c21;
 }
 
-.aptin-area .MuiIconButton-root:hover {
+.light .aptin-area .MuiIconButton-root:hover {
     background-color: #c0c2ca;
 }
 
-.aptin-area .MuiButton-containedPrimary {
+.light .aptin-area .MuiButton-containedPrimary {
     background-color: #181c21;
     padding: 12px 0;
 }
 
-.aptin-area .MuiButton-containedPrimary:hover {
+.light .aptin-area .MuiButton-containedPrimary:hover {
     background-color: #181c21;
 }
 
-.aptin-area .MuiButton-contained.Mui-disabled {
+.light .aptin-area .MuiButton-contained.Mui-disabled {
     background-color: rgba(24, 28, 33, 0.12);
     color: rgba(24, 28, 33, 0.3);
 }
 
-.aptin-area .MuiInputBase-root.Mui-disabled {
+.light .aptin-area .MuiInputBase-root.Mui-disabled {
     color: #c0c2ca;
 }
 
-.aptin-area .MuiSelect-icon.Mui-disabled {
+.light .aptin-area .MuiSelect-icon.Mui-disabled {
     color: #c0c2ca;
 }
 
-.aptin-area .MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline {
+.light .aptin-area .MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline {
     border: 1px solid #d9dbe2;
     border-color: #d9dbe2;
     border-radius: 50px;
 }
 
-.aptin-area .MuiFormLabel-root.Mui-disabled {
+.light .aptin-area .MuiFormLabel-root.Mui-disabled {
     color: #c0c2ca;
 }
 
-.aptin-area .MuiMenu-paper {
+.light .aptin-area .MuiMenu-paper {
     background-color: #303338;
 }
 
-.aptin-area .MuiInputLabel-outlined.MuiInputLabel-shrink {
+.light .aptin-area .MuiInputLabel-outlined.MuiInputLabel-shrink {
     color: #181c21;
 }
 
 
-.aptin-area .MuiOutlinedInput-notchedOutline {
+.light .aptin-area .MuiOutlinedInput-notchedOutline {
     border: 1px solid #d9dbe2;
     border-color: #d9dbe2;
     border-radius: 50px;
 }
 
-.aptin-area .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+.light .aptin-area .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
     color: #c0c2ca;
 }
 
-.aptin-area .MuiFormLabel-root {
+.light .aptin-area .MuiFormLabel-root {
     color: #c0c2ca;
 }
 
 
-.aptin-area .aptin-verifier .MuiOutlinedInput-notchedOutline {
+.light .aptin-area .aptin-verifier .MuiOutlinedInput-notchedOutline {
     border: 1px solid #d9dbe2;
     border-color: #d9dbe2;
     border-radius: 50px;
 }
 
-.aptin-area .aptin-verifier .MuiOutlinedInput-root {
+.light .aptin-area .aptin-verifier .MuiOutlinedInput-root {
     border: 0px;
 }
 
-.aptin-area .aptin-verifier .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+.light .aptin-area .aptin-verifier .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
     color: #c0c2ca;
 }
 
-.aptin-area .aptin-verifier .MuiFormLabel-root {
+.light .aptin-area .aptin-verifier .MuiFormLabel-root {
     color: #c0c2ca;
 }
 
@@ -594,50 +619,62 @@
 
 
 
-.aptin-dialog .MuiIconButton-root {
+.light .aptin-dialog .MuiIconButton-root {
     color: #181c21;
 
 }
 
-.aptin-dialog .MuiOutlinedInput-notchedOutline {
+.light .aptin-dialog .MuiOutlinedInput-notchedOutline {
     border: 1px solid #d9dbe2;
     border-color: #d9dbe2;
     border-radius: 50px;
 }
 
-.aptin-dialog .MuiOutlinedInput-root {
+.light .aptin-dialog .MuiOutlinedInput-root {
     border: 0px;
 }
 
-.aptin-dialog .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+.light .aptin-dialog .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
     color: #c0c2ca;
 }
 
-.aptin-dialog .MuiFormLabel-root {
+.light .aptin-dialog .MuiFormLabel-root {
     color: #c0c2ca;
 }
 
 
-.aptin-area .MuiAlert-root,
-.aptin-dialog .MuiAlert-root {
-    border-radius: 50px;
-}
-
-.MuiAlert-outlinedInfo {
-    border-radius: 100px !important;
-}
 
 
-.MuiTooltip-tooltip {
+
+.light .MuiTooltip-tooltip {
     border-radius: 50px !important;
     background-color: #181c21;
 }
 
-.MuiTooltip-tooltip .MuiButton-label {
+.light .MuiTooltip-tooltip .MuiButton-label {
     border-radius: 50px !important;
     color: #ffffff;
 }
 
-.MuiIconButton-label .MuiSvgIcon-root {
+.light .MuiIconButton-label .MuiSvgIcon-root {
     color: #181c21;
+}
+
+.light .return-ico{color: #ffffff;}
+
+.light .footer{
+    margin: 50px 0 0px 0;
+    height: 70px;
+    line-height: 70px;
+    border-top: 1px solid #e8e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+ 
+ 
+.light  .wormhole-link{
+  color: #181C21;
+  text-decoration: none;
 }

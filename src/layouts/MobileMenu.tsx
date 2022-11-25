@@ -32,6 +32,7 @@ interface MobileMenuProps {
     open: boolean;
     setOpen: (value: boolean) => void;
     headerHeight: number;
+    modeName:string;
 }
 
 const MenuItemsWrapper = ({ children, title }: { children: ReactNode; title: ReactNode }) => (
@@ -48,7 +49,7 @@ const MenuItemsWrapper = ({ children, title }: { children: ReactNode; title: Rea
     </Box>
 );
 
-export const MobileMenu = ({ open, setOpen, headerHeight }: MobileMenuProps) => {
+export const MobileMenu = ({ open, setOpen, headerHeight ,modeName}: MobileMenuProps) => {
 
 
     return (
@@ -62,7 +63,7 @@ export const MobileMenu = ({ open, setOpen, headerHeight }: MobileMenuProps) => 
                     <SvgIcon fontSize="small">
                         <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                                <path strokeLinecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
                             </svg>
                         </svg>
                     </SvgIcon>
@@ -73,7 +74,7 @@ export const MobileMenu = ({ open, setOpen, headerHeight }: MobileMenuProps) => 
                 {  
                     <>
                         <MenuItemsWrapper  title={<>Menu</>}>
-                            <NavItems setOpen={setOpen} />
+                            <NavItems setOpen={setOpen} modeName={modeName} />
                         </MenuItemsWrapper>
                      
                     </>

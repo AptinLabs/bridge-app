@@ -19,7 +19,7 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import { HelpOutline } from "@material-ui/icons";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useHistory, useLocation } from "react-router";
 import {
   Link as RouterLink,
@@ -45,6 +45,7 @@ import WithdrawTokensTerra from "./components/WithdrawTokensTerra";
 import { useBetaContext } from "./contexts/BetaContext";
 import AptinLogo from "./icons/aptin-b.png";
 import wormhole_logo from "./icons/wormhole_logo.svg";
+import wormhole_logo_w from "./icons/wormhole_logo_w.svg";
 import { AppHeaderAPT } from "./layouts/AppHeaderAPT";
 import { AppHeader } from "./layouts/AppHeader";
 
@@ -177,16 +178,24 @@ function App() {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
 
+  const bridge_mode = localStorage.getItem('bridge_modetype'); 
+  const [modeName, setModeName] = useState(bridge_mode?bridge_mode:theme.palette.type); 
+  document.getElementById("bridgebody").className=modeName;
+  // console.log('bridge_modetype----', bridge_mode,modeName); 
+
+
+
   return (
-    <div className={classes.bg}>
-      <div className="left-wrap">
-        <AppHeaderAPT />
-      </div>
-      <div className="right-wrap">
+  
+      <div className={classes.bg}>
+        <div className="left-wrap">
+          <AppHeaderAPT modeName={modeName} setModeName={setModeName} />
+        </div>
+        <div className="right-wrap">
 
-        <AppHeader />
+          <AppHeader modeName={modeName} setModeName={setModeName} />
 
-        {/* <AppBar
+          {/* <AppBar
           position="static"
           color="inherit"
           className={walletWidgetOpen || bridgeWidgetOpen ? 'header-apt mobile-open' : 'header-apt mobile-close'}
@@ -247,14 +256,14 @@ function App() {
             </Hidden>
           </Toolbar>
         </AppBar> */}
-        {/* {CLUSTER === "mainnet" ? null : (
+          {/* {CLUSTER === "mainnet" ? null : (
         <AppBar position="static" className={classes.betaBanner} elevation={0}>
           <Typography style={{ textAlign: "center" }}>
             Caution! You are using the {CLUSTER} build of this app.
           </Typography>
         </AppBar>
       )} */}
-        {/* {isBeta ? (
+          {/* {isBeta ? (
           <AppBar position="static" className={classes.betaBanner} elevation={0}>
             <Typography style={{ textAlign: "center" }}>
               Caution! You have enabled the beta. Enter the secret code again to
@@ -262,92 +271,93 @@ function App() {
             </Typography>
           </AppBar>
         ) : null} */}
-        {["/transfer", "/nft", "/redeem"].includes(pathname) ? (
-          <Container maxWidth="md" style={{ paddingBottom: 24 }}>
+          {["/transfer", "/nft", "/redeem"].includes(pathname) ? (
+            <Container maxWidth="md" style={{ paddingBottom: 24 }}>
 
-            <div className="power-by" style={{ 'height': isSmall ? '100px' : '140px' }}>
-              <span>Powered by</span>
-              <img src={wormhole_logo}/>
-            </div>
-            <Tabs className="aptin-menu"
-              value={pathname}
-              variant="fullWidth"
-              onChange={handleTabChange}
-              indicatorColor="primary"
-            >
-              <Tab className="menu-item" label="Tokens" value="/transfer" />
-              {/* <Tab className="menu-item" label="NFTs" value="/nft" /> */}
-              <Tab className="menu-item" label="Redeem" value="/redeem" to="/redeem" />
-            </Tabs>
-          </Container>
-        ) : null}
+              <div className="power-by" style={{ 'height': isSmall ? '100px' : '140px' }}>
+                <span>Powered by</span>
+                <img src={modeName=="dark"?wormhole_logo_w:wormhole_logo} />
+              </div>
+              <Tabs className="aptin-menu"
+                value={pathname}
+                variant="fullWidth"
+                onChange={handleTabChange}
+                indicatorColor="primary"
+              >
+                <Tab className="menu-item" label="Tokens" value="/transfer" />
+                {/* <Tab className="menu-item" label="NFTs" value="/nft" /> */}
+                <Tab className="menu-item" label="Redeem" value="/redeem" to="/redeem" />
+              </Tabs>
+            </Container>
+          ) : null}
 
-        <div className='aptin-area'>
+          <div className='aptin-area'>
 
-          <Switch>
-            <Route exact path="/transfer">
-              <Transfer />
-            </Route>
-            <Route exact path="/nft">
-              <NFT />
-            </Route>
-            <Route exact path="/redeem">
-              <Recovery />
-            </Route>
-            <Route exact path="/nft-origin-verifier">
-              <NFTOriginVerifier />
-            </Route>
-            <Route exact path="/token-origin-verifier">
-              <TokenOriginVerifier />
-            </Route>
-            <Route exact path="/register">
-              <Attest />
-            </Route>
-            <Route exact path="/migrate/Solana/:legacyAsset/:fromTokenAccount">
-              <Migration chainId={CHAIN_ID_SOLANA} />
-            </Route>
-            <Route exact path="/migrate/Ethereum/:legacyAsset/">
-              <Migration chainId={CHAIN_ID_ETH} />
-            </Route>
-            <Route exact path="/migrate/BinanceSmartChain/:legacyAsset/">
-              <Migration chainId={CHAIN_ID_BSC} />
-            </Route>
-            <Route exact path="/migrate/Ethereum/">
-              <EvmQuickMigrate chainId={CHAIN_ID_ETH} />
-            </Route>
-            <Route exact path="/migrate/BinanceSmartChain/">
-              <EvmQuickMigrate chainId={CHAIN_ID_BSC} />
-            </Route>
-            <Route exact path="/migrate/Solana/">
-              <SolanaQuickMigrate />
-            </Route>
-            <Route exact path="/stats">
-              <Stats />
-            </Route>
-            <Route exact path="/withdraw-tokens-terra">
-              <WithdrawTokensTerra />
-            </Route>
-            <Route exact path="/unwrap-native">
-              <UnwrapNative />
-            </Route>
-            <Route exact path="/custody-addresses">
-              <CustodyAddresses />
-            </Route>
-            <Route>
-              <Redirect to="/transfer" />
-            </Route>
-          </Switch>
+            <Switch>
+              <Route exact path="/transfer">
+                <Transfer />
+              </Route>
+              <Route exact path="/nft">
+                <NFT />
+              </Route>
+              <Route exact path="/redeem">
+                <Recovery />
+              </Route>
+              <Route exact path="/nft-origin-verifier">
+                <NFTOriginVerifier />
+              </Route>
+              <Route exact path="/token-origin-verifier">
+                <TokenOriginVerifier />
+              </Route>
+              <Route exact path="/register">
+                <Attest />
+              </Route>
+              <Route exact path="/migrate/Solana/:legacyAsset/:fromTokenAccount">
+                <Migration chainId={CHAIN_ID_SOLANA} />
+              </Route>
+              <Route exact path="/migrate/Ethereum/:legacyAsset/">
+                <Migration chainId={CHAIN_ID_ETH} />
+              </Route>
+              <Route exact path="/migrate/BinanceSmartChain/:legacyAsset/">
+                <Migration chainId={CHAIN_ID_BSC} />
+              </Route>
+              <Route exact path="/migrate/Ethereum/">
+                <EvmQuickMigrate chainId={CHAIN_ID_ETH} />
+              </Route>
+              <Route exact path="/migrate/BinanceSmartChain/">
+                <EvmQuickMigrate chainId={CHAIN_ID_BSC} />
+              </Route>
+              <Route exact path="/migrate/Solana/">
+                <SolanaQuickMigrate />
+              </Route>
+              <Route exact path="/stats">
+                <Stats />
+              </Route>
+              <Route exact path="/withdraw-tokens-terra">
+                <WithdrawTokensTerra />
+              </Route>
+              <Route exact path="/unwrap-native">
+                <UnwrapNative />
+              </Route>
+              <Route exact path="/custody-addresses">
+                <CustodyAddresses />
+              </Route>
+              <Route>
+                <Redirect to="/transfer" />
+              </Route>
+            </Switch>
+          </div>
+
+          <div className={classes.spacer} />
+          <div className={classes.gradientRight}></div>
+          {/* <div className={classes.gradientRight2}></div> */}
+          <div className={classes.gradientLeft}></div>
+          {/* <div className={classes.gradientLeft2}></div> */}
+          <Footer />
         </div>
 
-        <div className={classes.spacer} />
-        <div className={classes.gradientRight}></div>
-        {/* <div className={classes.gradientRight2}></div> */}
-        <div className={classes.gradientLeft}></div>
-        {/* <div className={classes.gradientLeft2}></div> */}
-        <Footer />
       </div>
-
-    </div>
+  
   );
 }
 

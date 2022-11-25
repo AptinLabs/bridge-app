@@ -2,17 +2,24 @@
 import { Box, Button, Link, MenuItem } from '@material-ui/core';
 import * as React from 'react';
 import AptinLogo from "../icons/aptin.png";
+import AptinLogo_w from "../icons/aptin-w.png";
 import BridgeWidgetMenu from './BridgeWidgetMenu';
 import { ComingSoon } from './Comingsoon';
 
-export const AppHeaderAPT = () => {
+interface HeaderProps {
+    modeName: string;
+    setModeName: (value: string) => void; 
+  }
 
-    const fillColor = '#6A7888'
+export const AppHeaderAPT = ({modeName,setModeName}:HeaderProps) => {
+
+    const fillColor = modeName == "dark" ? '#F1F1F3' : '#6A7888';
 
     return (
         <>
             <div className='aptin-logo'>
-                <img id='aptinLogo' src={AptinLogo} alt="aptin logo" />
+            <img src={ modeName == 'light'?AptinLogo:AptinLogo_w} alt="aptin logo" />
+
             </div>
 
             <Box className='left-menu-box'>
@@ -74,19 +81,95 @@ export const AppHeaderAPT = () => {
                        
                     </li>
                     <li className={"menu-item menugovernance"} data-cy="menugovernance"> 
-                        <ComingSoon menuName={'Governance'} />
+                        <ComingSoon menuName={'Governance'} modeName={modeName}/>
                     </li>
                     <li className={"menu-item on menubridge"} data-cy="menubridge">
-                        <BridgeWidgetMenu />
+                        <BridgeWidgetMenu modeName={modeName}/>
                     </li>
                 </ul>
             </Box>
 
             <div className='aptin-footer-box-left'>
-               
-                { 
+                {/* <MoreMenu /> */}
+                {
+                    modeName === 'dark' ?
                         <>
-                            <MenuItem component={Link} target={'_blank'} href={'https://discord.com/invite/fMVkQNumzb'}>
+                            <MenuItem component={Link} href={'https://discord.com/invite/fMVkQNumzb'}>
+
+
+                                <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g filter="url(#filter0_b_406_16378)">
+                                        <rect width="40" height="40" rx="20" fill="white" fill-opacity="0.1" />
+                                        <path d="M20 32C26.6274 32 32 26.6274 32 20C32 13.3726 26.6274 8 20 8C13.3726 8 8 13.3726 8 20C8 26.6274 13.3726 32 20 32Z" fill="white" />
+                                        <path d="M15.79 24.598H22.9189L22.5779 23.4927L23.3926 24.1922L24.1395 24.8601L25.4989 25.9969V15.238C25.4765 14.9023 25.3274 14.5877 25.0817 14.3579C24.836 14.1281 24.5122 14.0002 24.1758 14.0001H15.7916C15.457 13.9958 15.1341 14.1232 14.8925 14.3547C14.6509 14.5863 14.5099 14.9035 14.5 15.238V23.3601C14.5016 23.5266 14.5364 23.6912 14.6025 23.844C14.6685 23.9969 14.7645 24.1351 14.8846 24.2504C15.0048 24.3657 15.1468 24.4558 15.3022 24.5155C15.4577 24.5752 15.6235 24.6033 15.79 24.598ZM21.0637 16.8422H21.0463H21.0637ZM17.2474 17.4738C17.7567 17.0854 18.3741 16.8647 19.0142 16.8422L19.0821 16.9101C17.9611 17.1769 17.4526 17.6791 17.4526 17.6791C17.4526 17.6791 17.5884 17.6127 17.8253 17.5101C18.5762 17.2094 19.3826 17.0718 20.1908 17.1064C20.999 17.141 21.7906 17.3469 22.5132 17.7106C22.5132 17.7106 22.0032 17.2369 20.9516 16.9417L21.0447 16.8501C21.6747 16.8776 22.2811 17.0981 22.7816 17.4817C23.3635 18.5618 23.6796 19.765 23.7037 20.9917C23.6753 20.9475 23.1337 21.8238 21.7363 21.8538C21.7363 21.8538 21.5011 21.5854 21.3321 21.3533C22.1484 21.1196 22.4532 20.6506 22.4532 20.6506C22.223 20.7863 21.9859 20.9096 21.7426 21.0201C21.4481 21.1394 21.1424 21.2288 20.83 21.2869C19.3868 21.5206 18.5784 21.1291 17.8126 20.8133L17.5521 20.6791C17.5521 20.6791 17.8553 21.1527 18.6384 21.3817C18.4363 21.6233 18.2326 21.8948 18.2326 21.8948C16.84 21.8617 16.3379 20.9917 16.3379 20.9917C16.3575 19.7635 16.6692 18.5576 17.2474 17.4738Z" fill="#181C21" />
+                                        <path d="M21.1542 20.3842C21.3259 20.3759 21.4879 20.3018 21.6065 20.1773C21.725 20.0528 21.7912 19.8875 21.7912 19.7156C21.7912 19.5436 21.725 19.3783 21.6065 19.2538C21.4879 19.1293 21.3259 19.0552 21.1542 19.0469C20.9771 19.0469 20.8072 19.1172 20.6819 19.2425C20.5567 19.3678 20.4863 19.5376 20.4863 19.7148C20.4863 19.8919 20.5567 20.0618 20.6819 20.187C20.8072 20.3123 20.9771 20.3827 21.1542 20.3827V20.3842Z" fill="#181C21" />
+                                        <path d="M18.8456 20.3842C19.0174 20.3759 19.1793 20.3018 19.2979 20.1773C19.4165 20.0528 19.4826 19.8875 19.4826 19.7156C19.4826 19.5436 19.4165 19.3783 19.2979 19.2538C19.1793 19.1293 19.0174 19.0552 18.8456 19.0469C18.6685 19.0469 18.4986 19.1172 18.3734 19.2425C18.2481 19.3678 18.1777 19.5376 18.1777 19.7148C18.1777 19.8919 18.2481 20.0618 18.3734 20.187C18.4986 20.3123 18.6685 20.3827 18.8456 20.3827V20.3842Z" fill="#181C21" />
+                                        <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#252C38" strokeOpacity="0.1" />
+                                    </g>
+                                    <defs>
+                                        <filter id="filter0_b_406_16378" x="-224" y="-224" width="488" height="488" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                            <feGaussianBlur in="BackgroundImageFix" stdDeviation="112" />
+                                            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_406_16378" />
+                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_406_16378" result="shape" />
+                                        </filter>
+                                    </defs>
+                                </svg>
+
+                            </MenuItem>
+                            <MenuItem component={Link} href={'https://t.me/aptinlabs'}>
+
+
+                                <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g filter="url(#filter0_b_406_16386)">
+                                        <rect width="40" height="40" rx="20" fill="white" fill-opacity="0.1" />
+                                        <g clipPath="url(#clip0_406_16386)">
+                                            <path d="M20 32C26.6274 32 32 26.6274 32 20C32 13.3726 26.6274 8 20 8C13.3726 8 8 13.3726 8 20C8 26.6274 13.3726 32 20 32Z" fill="white" />
+                                            <path d="M13.4903 19.7383L25.0603 15.2773C25.5973 15.0833 26.0663 15.4083 25.8923 16.2203L25.8933 16.2193L23.9233 25.5003C23.7773 26.1583 23.3863 26.3183 22.8393 26.0083L19.8393 23.7973L18.3923 25.1913C18.2323 25.3513 18.0973 25.4863 17.7873 25.4863L18.0003 22.4333L23.5603 17.4103C23.8023 17.1973 23.5063 17.0773 23.1873 17.2893L16.3163 21.6153L13.3543 20.6913C12.7113 20.4873 12.6973 20.0483 13.4903 19.7383Z" fill="#181C21" />
+                                        </g>
+                                        <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#252C38" strokeOpacity="0.1" />
+                                    </g>
+                                    <defs>
+                                        <filter id="filter0_b_406_16386" x="-224" y="-224" width="488" height="488" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                            <feGaussianBlur in="BackgroundImageFix" stdDeviation="112" />
+                                            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_406_16386" />
+                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_406_16386" result="shape" />
+                                        </filter>
+                                        <clipPath id="clip0_406_16386">
+                                            <rect width="24" height="24" fill="white" transform="translate(8 8)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+
+
+                            </MenuItem>
+                            <MenuItem component={Link} href={'https://twitter.com/aptinlabs'}>
+
+
+
+                                <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g filter="url(#filter0_b_406_16390)">
+                                        <rect width="40" height="40" rx="20" fill="white" fill-opacity="0.1" />
+                                        <path d="M19.9999 31.9998C26.6273 31.9998 31.9998 26.6273 31.9998 19.9999C31.9998 13.3725 26.6273 8 19.9999 8C13.3725 8 8 13.3725 8 19.9999C8 26.6273 13.3725 31.9998 19.9999 31.9998Z" fill="white" />
+                                        <path d="M27.3498 16.6224C26.8356 16.8504 26.2824 17.0047 25.7023 17.0735C26.2946 16.7187 26.7492 16.1572 26.9637 15.487C26.4095 15.8158 25.7954 16.0543 25.1423 16.1828C24.6191 15.6256 23.8736 15.2773 23.0481 15.2773C21.4643 15.2773 20.1798 16.5619 20.1798 18.1457C20.1798 18.3705 20.2053 18.5893 20.2545 18.7994C17.8707 18.6798 15.757 17.5379 14.3422 15.8021C14.0954 16.2256 13.9538 16.7187 13.9538 17.2442C13.9538 18.2391 14.4605 19.1174 15.2297 19.6317C14.7598 19.6169 14.3172 19.4879 13.9307 19.2725C13.9304 19.2847 13.9304 19.2969 13.9304 19.3089C13.9304 20.6987 14.9196 21.8578 16.2315 22.1212C15.991 22.187 15.7371 22.2219 15.4759 22.2219C15.2907 22.2219 15.1112 22.2042 14.9362 22.1708C15.3012 23.3101 16.3602 24.1394 17.6157 24.1627C16.6338 24.9321 15.3972 25.3906 14.053 25.3906C13.822 25.3906 13.5931 25.3771 13.3691 25.3503C14.6378 26.1645 16.1459 26.6391 17.7656 26.6391C23.0415 26.6391 25.9267 22.2685 25.9267 18.4779C25.9267 18.3536 25.9239 18.2297 25.9184 18.1069C26.4792 17.7026 26.9654 17.1976 27.3498 16.6224Z" fill="#181C21" />
+                                        <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#252C38" strokeOpacity="0.1" />
+                                    </g>
+                                    <defs>
+                                        <filter id="filter0_b_406_16390" x="-224" y="-224" width="488" height="488" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                            <feGaussianBlur in="BackgroundImageFix" stdDeviation="112" />
+                                            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_406_16390" />
+                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_406_16390" result="shape" />
+                                        </filter>
+                                    </defs>
+                                </svg>
+
+                            </MenuItem>
+                        </>
+                        :
+                        <>
+                            <MenuItem component={Link} href={'https://discord.com/invite/fMVkQNumzb'}>
 
                                 <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="40" height="40" rx="20" fill="white" />
@@ -98,7 +181,7 @@ export const AppHeaderAPT = () => {
 
 
                             </MenuItem>
-                            <MenuItem component={Link}  target={'_blank'}  href={'https://t.me/aptinlabs'}>
+                            <MenuItem component={Link} href={'https://t.me/aptinlabs'}>
 
                                 <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="40" height="40" rx="20" fill="white" />
@@ -116,7 +199,7 @@ export const AppHeaderAPT = () => {
 
 
                             </MenuItem>
-                            <MenuItem component={Link}  target={'_blank'}  href={'https://twitter.com/aptinlabs'}>
+                            <MenuItem component={Link} href={'https://twitter.com/aptinlabs'}>
 
                                 <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="40" height="40" rx="20" fill="white" />

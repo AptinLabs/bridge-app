@@ -15,6 +15,7 @@ import {
   TextField,
   Tooltip,
   Typography,
+  useTheme,
 } from "@material-ui/core";
 import { InfoOutlined, Launch } from "@material-ui/icons";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
@@ -460,6 +461,10 @@ export default function TokenPicker({
     chainId,
   ]);
 
+  // const theme = useTheme(); 
+  //   const bridge_mode = localStorage.getItem('bridge_modetype');
+  //   const modeName = bridge_mode ? bridge_mode : theme.palette.type; 
+
   //TODO reset button
   //TODO debounce & save hotloaded options as an option before automatically selecting
   //TODO sigfigs function on the balance strings
@@ -481,8 +486,9 @@ export default function TokenPicker({
     </div>
   );
 
+
   const dialog = (
-    <Dialog className="aptin-dialog"
+    <Dialog className={" aptin-dialog"}
       onClose={closeDialog}
       aria-labelledby="simple-dialog-title"
       open={dialogIsOpen}

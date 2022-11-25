@@ -1,5 +1,5 @@
- 
-import { Drawer } from '@material-ui/core';
+
+import { Drawer, useTheme } from '@material-ui/core';
 import { ReactNode } from 'react';
 
 interface DrawerWrapperProps {
@@ -10,13 +10,17 @@ interface DrawerWrapperProps {
 }
 
 export const DrawerWrapper = ({ open, setOpen, children, headerHeight }: DrawerWrapperProps) => {
+  // const theme = useTheme();
+  // const bridge_mode = localStorage.getItem('bridge_modetype');
+  // const modeName = bridge_mode ? bridge_mode : theme.palette.type;
+
   return (
-    <Drawer className='bridge-drawer'
+    <Drawer className={' bridge-drawer'}
       anchor="top"
       open={open}
       onClose={() => setOpen(false)}
       hideBackdrop
-    //   sx={{ top: `${headerHeight}px` }}
+      //   sx={{ top: `${headerHeight}px` }}
       PaperProps={{
         // sx: {
         //   background: '#2f3337',

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'; 
-import { 
+import React, { useState } from 'react';
+import {
     Typography,
     useTheme,
     useMediaQuery,
@@ -7,25 +7,31 @@ import {
     MenuItem,
     Box,
     ListItemIcon,
-    SvgIcon, 
+    SvgIcon,
     ListItemText,
     Button,
     List,
     Menu,
     MenuList,
-  } from "@material-ui/core";
+} from "@material-ui/core";
 import { DrawerWrapper } from './DrawerWrapper';
 import cbridge from "../icons/bridge/cbridge.png";
 import wormhole from "../icons/bridge/wormhole.png";
 import layerzero from "../icons/bridge/layerzero.png";
 
-export default function BridgeWidgetMenu() {
-   const theme = useTheme();
+interface HeaderProps {
+    modeName: string; 
+  } 
+
+export default function BridgeWidgetMenu({modeName}:HeaderProps) {
+    const theme = useTheme();
 
     // const md = useMediaQuery(theme.breakpoints.down('md'));
     const md = useMediaQuery(theme.breakpoints.down("sm"));
-    const fillColor = '#6A7888';
- 
+    // const bridge_mode = localStorage.getItem('bridge_modetype');
+    // const modeName = bridge_mode ? bridge_mode : theme.palette.type; 
+    const fillColor = modeName == "dark" ? '#F1F1F3' : '#6A7888';
+
     const [anchorEl, setAnchorEl] = React.useState<Element | null>(null);
     const open = Boolean(anchorEl);
 
@@ -44,7 +50,7 @@ export default function BridgeWidgetMenu() {
     const brigdeList = [
         {
             name: 'cBridge',
-            url: 'https://cbridge.celer.network/', 
+            url: 'https://cbridge.celer.network/',
             logo: cbridge
         },
         {
@@ -68,19 +74,19 @@ export default function BridgeWidgetMenu() {
         <>
             {
                 md && openMobile && (
-                    <Box  className='mobile-nav-li' 
+                    <Box className='mobile-nav-li'
                         component={component}
                         sx={{ color: { xs: '#F1F1F3', md: 'text.primary' }, mb: '4px' }}
                         onClick={() => { onClick() }}
                     >
                         <ListItemIcon style={{}}
-                            // sx={{
-                            //     minWidth: 'unset !important',
-                            //     mr: 2,
-                            //     color: { xs: '#F1F1F3', md: 'primary.light' },
-                            // }}
+                        // sx={{
+                        //     minWidth: 'unset !important',
+                        //     mr: 2,
+                        //     color: { xs: '#F1F1F3', md: 'primary.light' },
+                        // }}
                         >
-                           <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-egnern-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></svg>
+                            <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-egnern-MuiSvgIcon-root return-ico" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></svg>
                         </ListItemIcon>
                         <ListItemText disableTypography>
                             <Typography>
@@ -90,32 +96,32 @@ export default function BridgeWidgetMenu() {
                     </Box>
                 )
             }
- 
+
             {
                 brigdeList.map((item) => {
-                    return <Box className='mobile-nav-li' 
+                    return <Box className='mobile-nav-li'
                         key={item.name}
                         component={component}
                         sx={{ color: { xs: '#F1F1F3', md: 'text.primary' } }}
                         onClick={() => {
                             handleClose();
-                            if(item.name=='Wormhole'){
+                            if (item.name == 'Wormhole') {
                                 window.open(item.url, "_self");
-                            }else{
+                            } else {
                                 window.open(item.url, "_blank");
                             }
-                           
+
                         }}
                     >
                         <ListItemIcon
-                            // sx={{
-                            //     color: {
-                            //         xs: '#F1F1F3',
-                            //         md: 'primary.light',
-                            //         minWidth: 'unset',
-                            //         marginRight: 12,
-                            //     },
-                            // }}
+                        // sx={{
+                        //     color: {
+                        //         xs: '#F1F1F3',
+                        //         md: 'primary.light',
+                        //         minWidth: 'unset',
+                        //         marginRight: 12,
+                        //     },
+                        // }}
                         >
                             <img
                                 src={item.logo}
@@ -124,7 +130,7 @@ export default function BridgeWidgetMenu() {
                             />
                         </ListItemIcon>
                         <ListItemText>
-                            {item.name} 
+                            {item.name}
                         </ListItemText>
                     </Box>
                 })
@@ -143,7 +149,7 @@ export default function BridgeWidgetMenu() {
                     // sx={{ width: '100%', p: 4 }}
                     onClick={handleClick}
                 >
-                   Bridge
+                    Bridge
                 </Typography>
             ) : (
                 <Button className={'no-handle-a'}
@@ -152,7 +158,7 @@ export default function BridgeWidgetMenu() {
                     aria-controls={open ? 'bridge-button' : undefined}
                     aria-expanded={open ? 'true' : undefined}
                     aria-haspopup="true"
-                    onClick={handleClick} 
+                    onClick={handleClick}
                 >
 
                     <span className='ico-svg'>
@@ -166,19 +172,19 @@ export default function BridgeWidgetMenu() {
 
                 </Button>
 
-            )} 
- 
+            )}
+
 
             {md ? (
                 <DrawerWrapper open={openMobile} setOpen={() => { }} headerHeight={48}>
-                    <List  className='navigation-list'>
+                    <List className='navigation-list'>
 
                         <Content />
                     </List>
                 </DrawerWrapper>
             ) : (
                 <Menu
-                    className={'atpin-menu-dailog '}
+                    className={' atpin-menu-dailog'}
                     id="bridge-menu"
                     MenuListProps={{
                         'aria-labelledby': 'wallet-button',
@@ -188,11 +194,10 @@ export default function BridgeWidgetMenu() {
                     onClose={handleClose}
                     keepMounted={true}
                 >
-                  <Content component={MenuItem} />
+                    <Content component={MenuItem} />
                 </Menu>
             )}
         </>
     )
 }
 
- 

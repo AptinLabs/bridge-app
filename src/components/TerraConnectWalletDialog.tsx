@@ -8,6 +8,7 @@ import {
   ListItemIcon,
   ListItemText,
   makeStyles,
+  useTheme,
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import { ConnectType, useWallet } from "@terra-money/wallet-provider";
@@ -107,8 +108,12 @@ const TerraConnectWalletDialog = ({
         <ListItemText>{"Install " + name}</ListItemText>
       </ListItem>
     ));
+    // const theme = useTheme(); 
+    // const bridge_mode = localStorage.getItem('bridge_modetype');
+    // const modeName = bridge_mode ? bridge_mode : theme.palette.type; 
+    
   return (
-    <Dialog open={isOpen} onClose={onClose}>
+    <Dialog className={''} open={isOpen} onClose={onClose}>
       <DialogTitle>
         <div className={classes.flexTitle}>
           <div>Select your wallet</div>

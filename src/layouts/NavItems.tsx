@@ -26,9 +26,10 @@ import BridgeWidgetMenu from './BridgeWidgetMenu';
 
 interface NavItemsProps {
     setOpen?: (value: boolean) => void;
+    modeName:string;
 }
 
-export const NavItems = ({ setOpen }: NavItemsProps) => {
+export const NavItems = ({ setOpen ,modeName}: NavItemsProps) => {
 
     const { breakpoints } = useTheme();
     // const md = useMediaQuery(breakpoints.down('md'));
@@ -84,7 +85,7 @@ export const NavItems = ({ setOpen }: NavItemsProps) => {
                         data-cy={'bridge'}
                         key={100}
                     >
-                        <BridgeWidgetMenu />
+                        <BridgeWidgetMenu  modeName={modeName}/>
                     </ListItem>
                 )
             }

@@ -1,15 +1,22 @@
- 
-import { Button, ListItemText, Menu, MenuItem } from '@material-ui/core';
+
+import { Button, ListItemText, Menu, MenuItem, useTheme } from '@material-ui/core';
 import React from 'react';
 
 export interface ComingSoonProps {
     menuName: string;
+    modeName: string; 
 }
+ 
 
 export const ComingSoon = ({
     menuName,
-}: ComingSoonProps) => { 
-    const fillColor = '#6A7888'; 
+    modeName,
+}: ComingSoonProps) => {
+    // const theme = useTheme();
+    // const bridge_mode = localStorage.getItem('bridge_modetype');
+    // const modeName = bridge_mode ? bridge_mode : theme.palette.type;
+    const fillColor = modeName == "dark" ? '#F1F1F3' : '#6A7888';
+
     const [anchorEl, setAnchorEl] = React.useState<Element | null>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -30,11 +37,11 @@ export const ComingSoon = ({
                 aria-haspopup="true"
                 onClick={handleClick}
             >
-               
+
 
                 {menuName === 'Governance' &&
-                 
-                    <span className='ico-svg'> 
+
+                    <span className='ico-svg'>
 
                         <svg width="10" height="10" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.55441 3.52401C9.06719 3.75807 10.2409 4.93203 10.4755 6.44542C10.4978 6.58785 10.6199 6.69288 10.7644 6.69288H13.7072C13.7888 6.69288 13.867 6.65863 13.9224 6.59812C13.9778 6.5379 14.0052 6.45712 13.9983 6.37549C13.7055 2.9754 11.0247 0.294629 7.62403 0.00118628C7.5441 -0.00623952 7.4619 0.0214634 7.4014 0.0768144C7.34089 0.132193 7.30664 0.210397 7.30664 0.292327V3.23514C7.30664 3.3793 7.41167 3.50203 7.55441 3.52401Z" fill={fillColor} />
@@ -49,7 +56,7 @@ export const ComingSoon = ({
             </Button>
 
             <Menu
-            className='more-menu atpin-menu-dailog'
+                className={' more-menu atpin-menu-dailog'}
                 id="more-menu"
                 MenuListProps={{
                     'aria-labelledby': 'more-button',
@@ -58,13 +65,12 @@ export const ComingSoon = ({
                 open={open}
                 onClose={handleClose}
                 keepMounted={true}
-                
+
             >
-                <MenuItem  key={1}>
+                <MenuItem key={1}>
                     <ListItemText>Coming soon</ListItemText>
                 </MenuItem>
             </Menu>
         </>
     );
 }
- 

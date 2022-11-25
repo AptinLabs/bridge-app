@@ -41,7 +41,7 @@ interface ChainSelectProps extends OutlinedTextFieldProps {
 }
 
 export default function ChainSelect({ chains, ...rest }: ChainSelectProps) {
-  const classes = useStyles();
+  const classes = useStyles(); 
   const isBeta = useBetaContext();
   const filteredChains = useMemo(
     () =>
@@ -49,7 +49,7 @@ export default function ChainSelect({ chains, ...rest }: ChainSelectProps) {
     [chains, isBeta]
   );
   return (
-    <TextField {...rest} className={clsx(classes.select, rest.className)}>
+    <TextField {...rest}  className={clsx(classes.select, rest.className)}> 
       {filteredChains.map((chain) => createChainMenuItem(chain, classes))}
     </TextField>
   );

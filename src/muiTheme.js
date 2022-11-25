@@ -30,7 +30,7 @@ const suisse = {
 export const theme = responsiveFontSizes(
   createTheme({
     palette: {
-      type: "dark",
+      type: "light",
       background: {
         default: COLORS.nearBlack,
         paper: COLORS.nearBlack,
