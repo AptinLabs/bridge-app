@@ -1,24 +1,9 @@
 
-
-import React, { ReactNode, useEffect, useState } from 'react';
-import {
-    AppBar,
-    Container,
-    Hidden,
-    IconButton,
-    Link,
-    makeStyles,
-    Tab,
-    Tabs,
-    Toolbar,
-    Tooltip,
+import { 
+    Link,  
     Typography,
     useTheme,
-    useMediaQuery,
-    Box,
-    Divider,
-    Button,
-    SvgIcon,
+    useMediaQuery, 
     List,
     ListItem,
 } from "@material-ui/core";
@@ -31,8 +16,7 @@ interface NavItemsProps {
 
 export const NavItems = ({ setOpen ,modeName}: NavItemsProps) => {
 
-    const { breakpoints } = useTheme();
-    // const md = useMediaQuery(breakpoints.down('md'));
+    const { breakpoints } = useTheme(); 
     const md = useMediaQuery(breakpoints.down('sm'));
     return (
         <List

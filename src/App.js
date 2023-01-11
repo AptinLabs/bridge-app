@@ -3,27 +3,17 @@ import {
   CHAIN_ID_ETH,
   CHAIN_ID_SOLANA,
 } from "@certusone/wormhole-sdk";
-import {
-  AppBar,
-  Container,
-  Hidden,
-  IconButton,
-  Link,
+import { 
+  Container, 
   makeStyles,
   Tab,
-  Tabs,
-  Toolbar,
-  Tooltip,
-  Typography,
+  Tabs, 
   useTheme,
   useMediaQuery,
-} from "@material-ui/core";
-import { HelpOutline } from "@material-ui/icons";
+} from "@material-ui/core"; 
 import { useCallback, useState } from "react";
 import { useHistory, useLocation } from "react-router";
-import {
-  Link as RouterLink,
-  NavLink,
+import { 
   Redirect,
   Route,
   Switch,
@@ -42,23 +32,13 @@ import TokenOriginVerifier from "./components/TokenOriginVerifier";
 import Transfer from "./components/Transfer";
 import UnwrapNative from "./components/UnwrapNative";
 import WithdrawTokensTerra from "./components/WithdrawTokensTerra";
-import { useBetaContext } from "./contexts/BetaContext";
-import AptinLogo from "./icons/aptin-b.png";
+import { useBetaContext } from "./contexts/BetaContext"; 
 import wormhole_logo from "./icons/wormhole_logo.svg";
 import wormhole_logo_w from "./icons/wormhole_logo_w.svg";
 import { AppHeaderAPT } from "./layouts/AppHeaderAPT";
 import { AppHeader } from "./layouts/AppHeader";
 
-const useStyles = makeStyles((theme) => ({
-  // appBar: {
-  //   background: "transparent",
-  //   marginTop: theme.spacing(2),
-  //   "& > .MuiToolbar-root": {
-  //     margin: "auto",
-  //     width: "100%",
-  //     maxWidth: 1440,
-  //   },
-  // },
+const useStyles = makeStyles((theme) => ({ 
   spacer: {
     flex: 1,
     width: "100vw",
@@ -164,8 +144,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function App() {
-  const classes = useStyles();
-  const isBeta = useBetaContext();
+  const classes = useStyles(); 
   const { push } = useHistory();
   const { pathname } = useLocation();
   const handleTabChange = useCallback(
@@ -180,10 +159,7 @@ function App() {
 
   const bridge_mode = localStorage.getItem('bridge_modetype'); 
   const [modeName, setModeName] = useState(bridge_mode?bridge_mode:theme.palette.type); 
-  document.getElementById("bridgebody").className=modeName;
-  // console.log('bridge_modetype----', bridge_mode,modeName); 
-
-
+  document.getElementById("bridgebody").className=modeName; 
 
   return (
   
@@ -193,84 +169,8 @@ function App() {
         </div>
         <div className="right-wrap">
 
-          <AppHeader modeName={modeName} setModeName={setModeName} />
-
-          {/* <AppBar
-          position="static"
-          color="inherit"
-          className={walletWidgetOpen || bridgeWidgetOpen ? 'header-apt mobile-open' : 'header-apt mobile-close'}
-          elevation={0}
-        >
-          <Toolbar>
-            <Link
-              component={RouterLink}
-              to="/transfer"
-              className={classes.brandLink}
-            >
-              <img src={AptinLogo} alt="Aptin" className={classes.wormholeIcon} />
-              <span style={{ 'font-size': '22px', 'color': '#181c21' }}>Bridge</span>
-            </Link>
-            <div className={classes.spacer} />
-            <Hidden implementation="css" xsDown>
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <Link
-                  component={NavLink}
-                  to="/transfer"
-                  color="inherit"
-                  className={classes.link}
-                >
-                  Bridge
-                </Link>
-                <Link
-                  href="https://docs.wormholenetwork.com/wormhole/faqs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color="inherit"
-                  className={classes.link}
-                >
-                  FAQ
-                </Link>
-                <Link
-                  href="https://wormholenetwork.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color="inherit"
-                  className={classes.link}
-                >
-                  Wormhole
-                </Link>
-              </div>
-            </Hidden>
-            <Hidden implementation="css" smUp>
-              <Tooltip title="View the FAQ">
-                <IconButton
-                  href="https://docs.wormholenetwork.com/wormhole/faqs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  size="small"
-                  className={classes.link}
-                >
-                  <HelpOutline />
-                </IconButton>
-              </Tooltip>
-            </Hidden>
-          </Toolbar>
-        </AppBar> */}
-          {/* {CLUSTER === "mainnet" ? null : (
-        <AppBar position="static" className={classes.betaBanner} elevation={0}>
-          <Typography style={{ textAlign: "center" }}>
-            Caution! You are using the {CLUSTER} build of this app.
-          </Typography>
-        </AppBar>
-      )} */}
-          {/* {isBeta ? (
-          <AppBar position="static" className={classes.betaBanner} elevation={0}>
-            <Typography style={{ textAlign: "center" }}>
-              Caution! You have enabled the beta. Enter the secret code again to
-              disable.
-            </Typography>
-          </AppBar>
-        ) : null} */}
+          <AppHeader modeName={modeName} setModeName={setModeName} /> 
+         
           {["/transfer", "/nft", "/redeem"].includes(pathname) ? (
             <Container maxWidth="md" style={{ paddingBottom: 24 }}>
 
@@ -284,8 +184,7 @@ function App() {
                 onChange={handleTabChange}
                 indicatorColor="primary"
               >
-                <Tab className="menu-item" label="Tokens" value="/transfer" />
-                {/* <Tab className="menu-item" label="NFTs" value="/nft" /> */}
+                <Tab className="menu-item" label="Tokens" value="/transfer" /> 
                 <Tab className="menu-item" label="Redeem" value="/redeem" to="/redeem" />
               </Tabs>
             </Container>
@@ -349,10 +248,8 @@ function App() {
           </div>
 
           <div className={classes.spacer} />
-          <div className={classes.gradientRight}></div>
-          {/* <div className={classes.gradientRight2}></div> */}
-          <div className={classes.gradientLeft}></div>
-          {/* <div className={classes.gradientLeft2}></div> */}
+          <div className={classes.gradientRight}></div> 
+          <div className={classes.gradientLeft}></div> 
           <Footer />
         </div>
 

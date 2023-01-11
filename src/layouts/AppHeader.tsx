@@ -1,64 +1,16 @@
-
-import * as React from 'react';
 import { useEffect, useState } from 'react';
-import {
-    AppBar,
-    Container,
-    Hidden,
-    IconButton,
-    Link,
-    makeStyles,
-    Tab,
-    Tabs,
-    Toolbar,
-    Tooltip,
-    Typography,
+import { 
+    Container, 
+    makeStyles, 
     useTheme,
     useMediaQuery,
     Box,
     PaletteType,
-} from "@material-ui/core";
-import {
-    Link as RouterLink,
-    NavLink,
-} from "react-router-dom";
-
+} from "@material-ui/core";  
 import AptinLogo from "../icons/aptin.png";
 import AptinLogo_w from "../icons/aptin-w.png";
 import { MobileMenu } from './MobileMenu';
-
-
-const useStyles = makeStyles((theme) => ({
-
-    link: {
-        ...theme.typography.body2,
-        fontWeight: 600,
-        fontFamily: "Suisse BP Intl, sans-serif",
-        color: "#181c21",
-        marginLeft: theme.spacing(4),
-        textUnderlineOffset: "6px",
-        [theme.breakpoints.down("sm")]: {
-            marginLeft: theme.spacing(2.5),
-        },
-        [theme.breakpoints.down("xs")]: {
-            marginLeft: theme.spacing(1),
-        },
-        "&.active": {
-            textDecoration: "underline",
-        },
-    }
-    ,
-    brandLink: {
-        display: "inline-flex",
-        alignItems: "center",
-        "&:hover": {
-            textDecoration: "none",
-        },
-    },
-
-}));
-
-
+  
 interface HeaderProps {
     modeName: string;
     setModeName: (value: string) => void; 
@@ -66,11 +18,9 @@ interface HeaderProps {
 
   
 export function AppHeader({modeName,setModeName}:HeaderProps) {
-    const classes = useStyles();
-
+    
     const theme = useTheme();
-    const md = useMediaQuery(theme.breakpoints.down('sm'));
-    const downToSM = md;
+    const md = useMediaQuery(theme.breakpoints.down('sm')); 
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [walletWidgetOpen, setWalletWidgetOpen] = useState(false);
@@ -108,33 +58,7 @@ export function AppHeader({modeName,setModeName}:HeaderProps) {
                     <img src={ modeName == 'light'?AptinLogo:AptinLogo_w} alt="aptin logo" height={26} />
                 </a>
 
-                <Box sx={{ flexGrow: 1 }} />
-
-                {/* {!mobileMenuOpen && !downToSM && (
-                    <>
-                        <div className='wormhole-info'>
-                            
-                            <Link
-                                href="https://docs.wormholenetwork.com/wormhole/faqs"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                color="inherit"
-                                className={classes.link}
-                            >
-                                FAQ
-                            </Link>
-                            <Link
-                                href="https://wormholenetwork.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                color="inherit"
-                                className={classes.link}
-                            >
-                                Wormhole
-                            </Link>
-                        </div>
-                    </>
-                )} */}
+                <Box sx={{ flexGrow: 1 }} /> 
 
                 <Box className='wormhole-info' style={{ margin: '0px 0px' }}>
                     {

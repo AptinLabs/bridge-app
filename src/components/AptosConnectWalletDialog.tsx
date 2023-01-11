@@ -99,10 +99,7 @@ const AptosConnectWalletDialog = ({
         key={name}
       />
     ));
-
-    // const theme = useTheme(); 
-    // const bridge_mode = localStorage.getItem('bridge_modetype');
-    // const modeName = bridge_mode ? bridge_mode : theme.palette.type; 
+ 
   return (
     <Dialog className={''} open={isOpen} onClose={onClose}>
       <DialogTitle>

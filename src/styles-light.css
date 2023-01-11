@@ -133,8 +133,7 @@
 
     .light .left-wrap .muiList-root li .ico-svg {
         height: 20px;
-        width: 20px;
-        /* background-color: #FFFFFF; */
+        width: 20px; 
         display: flex;
         justify-content: center;
         align-items: center;
@@ -145,20 +144,7 @@
     .light .left-wrap .muiList-root li.on .ico-svg svg path {
         fill: #ffffff; 
     }
-
-    /* .light .left-wrap.dark .muiList-root li .ico-svg {
-        background-color: #2f3337;
-    }
-
-    .light .left-wrap.dark .muiList-root li.on .ico-svg {
-        background-color: #181c21;
-        ;
-    } */
-
-    /* .light .left-wrap.dark .muiList-root li.on .ico-svg svg path {
-        fill: #FFFFFF;
-    } */
-
+ 
 
     .light .left-wrap.hide .muiList-root li .nav-i {
         display: none;
@@ -185,11 +171,7 @@
         align-items: center;
         justify-content: center
     }
-
-    /* .light .left-wrap.dark .aptin-footer-box-left {
-        border-top: 1px solid #2f3337;
-    } */
-
+ 
     .light .left-wrap .aptin-footer-box-left .MuiTypography-root {
         padding: 0px;
         margin: 0px 5px;
@@ -211,11 +193,7 @@
         border: 0px;
         background: #ffffff;
     }
-
-    /* .light .atpin-menu-dailog.dark .MuiMenu-paper {
-        background-color: #2f3337;
-    } */
-
+ 
     .light .atpin-menu-dailog .MuiListItem-button {}
 
     .light .atpin-menu-dailog .MuiListItem-button .MuiListItemIcon-root {
@@ -241,10 +219,7 @@
         display: flex;
         align-items: center;
     }
-
-    /* .light .right-wrap.dark .header-apt {
-        border-bottom: 1px solid #2f3337;
-    } */
+ 
 
     .light .right-wrap .header-apt .data-wrap {
         flex-direction: row;

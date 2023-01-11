@@ -11,10 +11,7 @@ export interface ComingSoonProps {
 export const ComingSoon = ({
     menuName,
     modeName,
-}: ComingSoonProps) => {
-    // const theme = useTheme();
-    // const bridge_mode = localStorage.getItem('bridge_modetype');
-    // const modeName = bridge_mode ? bridge_mode : theme.palette.type;
+}: ComingSoonProps) => { 
     const fillColor = modeName == "dark" ? '#F1F1F3' : '#6A7888';
 
     const [anchorEl, setAnchorEl] = React.useState<Element | null>(null);

@@ -1,6 +1,5 @@
 
-import { Box, Button, Link, MenuItem } from '@material-ui/core';
-import * as React from 'react';
+import { Box, Button, Link, MenuItem } from '@material-ui/core'; 
 import AptinLogo from "../icons/aptin.png";
 import AptinLogo_w from "../icons/aptin-w.png";
 import BridgeWidgetMenu from './BridgeWidgetMenu';

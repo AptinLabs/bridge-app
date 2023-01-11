@@ -48,8 +48,7 @@
         top: 22px;
         padding: 0;
         margin: 0px;
-        background: none !important;
-        /* animation-delay: 0.5s; */
+        background: none !important; 
     }
 
     .dark .left-menu-box .menu-btn-hide span {
@@ -65,8 +64,7 @@
     .dark .left-wrap .muiList-root li {
         list-style: none;
         height: 42px;
-        line-height: 42px;
-        /* padding: 0px 10px; */
+        line-height: 42px; 
         margin: 2px 24px;
 
     }
@@ -74,10 +72,7 @@
     .dark .left-wrap .muiList-root li.menu-item {
         border-radius: 50px;
     }
-
-    /* .dark .left-wrap .muiList-root li.menu-item:hover {
-        background-color: #d1d1d1; 
-    } */
+ 
     .dark .left-wrap .muiList-root li.menu-item:active,
     .dark .left-wrap .muiList-root li.on {
         background: #FFFFFF;

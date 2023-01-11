@@ -6,13 +6,11 @@ import {
     ListItem,
     MenuItem,
     Box,
-    ListItemIcon,
-    SvgIcon,
+    ListItemIcon, 
     ListItemText,
     Button,
     List,
-    Menu,
-    MenuList,
+    Menu, 
 } from "@material-ui/core";
 import { DrawerWrapper } from './DrawerWrapper';
 import cbridge from "../icons/bridge/cbridge.png";
@@ -24,12 +22,8 @@ interface HeaderProps {
   } 
 
 export default function BridgeWidgetMenu({modeName}:HeaderProps) {
-    const theme = useTheme();
-
-    // const md = useMediaQuery(theme.breakpoints.down('md'));
-    const md = useMediaQuery(theme.breakpoints.down("sm"));
-    // const bridge_mode = localStorage.getItem('bridge_modetype');
-    // const modeName = bridge_mode ? bridge_mode : theme.palette.type; 
+    const theme = useTheme(); 
+    const md = useMediaQuery(theme.breakpoints.down("sm")); 
     const fillColor = modeName == "dark" ? '#F1F1F3' : '#6A7888';
 
     const [anchorEl, setAnchorEl] = React.useState<Element | null>(null);
@@ -79,13 +73,7 @@ export default function BridgeWidgetMenu({modeName}:HeaderProps) {
                         sx={{ color: { xs: '#F1F1F3', md: 'text.primary' }, mb: '4px' }}
                         onClick={() => { onClick() }}
                     >
-                        <ListItemIcon style={{}}
-                        // sx={{
-                        //     minWidth: 'unset !important',
-                        //     mr: 2,
-                        //     color: { xs: '#F1F1F3', md: 'primary.light' },
-                        // }}
-                        >
+                        <ListItemIcon style={{}}>
                             <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-egnern-MuiSvgIcon-root return-ico" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></svg>
                         </ListItemIcon>
                         <ListItemText disableTypography>
@@ -113,16 +101,7 @@ export default function BridgeWidgetMenu({modeName}:HeaderProps) {
 
                         }}
                     >
-                        <ListItemIcon
-                        // sx={{
-                        //     color: {
-                        //         xs: '#F1F1F3',
-                        //         md: 'primary.light',
-                        //         minWidth: 'unset',
-                        //         marginRight: 12,
-                        //     },
-                        // }}
-                        >
+                        <ListItemIcon>
                             <img
                                 src={item.logo}
                                 width="20"
@@ -144,9 +123,7 @@ export default function BridgeWidgetMenu({modeName}:HeaderProps) {
         <>
 
             {md ? (
-                <Typography
-                    // variant="h2" 
-                    // sx={{ width: '100%', p: 4 }}
+                <Typography 
                     onClick={handleClick}
                 >
                     Bridge
