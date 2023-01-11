@@ -78,6 +78,15 @@ export const NavItems = ({ setOpen ,modeName}: NavItemsProps) => {
                     Governance
                 </Typography>
             </ListItem>
+            <ListItem className='mobile-nav-li'>
+                <Typography
+                    component={Link}
+                    href={'https://app.aptin.io/swap/'}
+                    onClick={() => (setOpen ? setOpen(false) : undefined)}
+                >
+                    Swap
+                </Typography>
+            </ListItem>
 
             {
                 md && (

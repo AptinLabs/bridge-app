@@ -132,9 +132,9 @@
 
 
     .light .left-wrap .muiList-root li .ico-svg {
-        height: 24px;
-        width: 24px;
-        background-color: #FFFFFF;
+        height: 20px;
+        width: 20px;
+        /* background-color: #FFFFFF; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -143,8 +143,7 @@
     }
 
     .light .left-wrap .muiList-root li.on .ico-svg svg path {
-        fill: #181c21;
-        ;
+        fill: #ffffff; 
     }
 
     /* .light .left-wrap.dark .muiList-root li .ico-svg {
