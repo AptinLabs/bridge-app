@@ -1,50 +1,46 @@
-# Example Token Bridge UI
+# Getting Started with Create React App
 
-## Prerequisites
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- NodeJS v14+
-- NPM v7.18+
+## Available Scripts
 
-## Install
+In the project directory, you can run:
 
-```bash
-npm ci
-```
+### `npm start`
 
-## Develop
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```bash
-npm start
-```
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Build for local tilt network
+### `npm test`
 
-```bash
-npm run build
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Build for testnet
+### `npm run build`
 
-```bash
-REACT_APP_CLUSTER=testnet npm run build
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Build for mainnet
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-```bash
-REACT_APP_CLUSTER=mainnet REACT_APP_COVALENT_API_KEY=YOUR_API_KEY REACT_APP_SOLANA_API_URL=YOUR_CUSTOM_RPC npm run build
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Test Server
+### `npm run eject`
 
-```bash
-npx serve -s build
-```
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-## Environment Variables (optional)
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Create `.env` from the sample file, then add your Covalent API key:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-```bash
-cp .env.sample .env
-```
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).

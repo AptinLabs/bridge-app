@@ -79,9 +79,7 @@ export const AppHeaderAPT = ({ modeName, setModeName }: HeaderProps) => {
                         </Button>
 
                     </li>
-                    <li className={"menu-item menugovernance"} data-cy="menugovernance">
-                        <ComingSoon menuName={'Governance'} modeName={modeName} />
-                    </li>
+                  
                     <li className={"menu-item menuswap"} data-cy="menuswap">
 
                         <Button
@@ -97,6 +95,9 @@ export const AppHeaderAPT = ({ modeName, setModeName }: HeaderProps) => {
                             <span className='nav-i'>Swap</span>
                         </Button>
 
+                    </li>
+                    <li className={"menu-item menugovernance"} data-cy="menugovernance">
+                        <ComingSoon menuName={'Governance'} modeName={modeName} />
                     </li>
                     <li className={"menu-item on menubridge"} data-cy="menubridge">
                         <BridgeWidgetMenu modeName={modeName} />
